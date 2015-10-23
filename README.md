@@ -2,10 +2,10 @@
 > 文件状态：
 > [√] 草稿
 > [ ] 正式发布
-> [ ] 正在修改	
-> 文件标识：	PHP编码规范
-> 当前版本：	1.0
-> 作    者：	Rich (SevenRich@163.com)
+> [ ] 正在修改	<br/>
+> 文件标识：	PHP编码规范<br/>
+> 当前版本：	1.0<br/>
+> 作    者：	Rich (SevenRich@163.com)<br/>
 > 完成日期：	2015-10-23
 	
 ## 1开发工具
@@ -79,7 +79,7 @@ class Foo extends Bar implements FooInterface
 ### 3.2 细节要求
 #### 3.2.1 关键词
 PHP所有 关键字必须全部小写。
-常量 true 、 false 和 null 也必须全部小写。
+常量 `true` 、 `false` 和 `null` 也必须全部小写。
 
 #### 3.2.2  控制结构
 控制结构的基本规范如下：
@@ -91,9 +91,10 @@ PHP所有 关键字必须全部小写。
 结束花括号 } 一定在结构体文体后单独成行。
 每个结构体的主体都必须被包含在成对的花括号之中，这能让结构更加话，以及减少加入新行时，出错的可能性。
 
-3.2.2.1 if 、elseif 和 else
+#### 3.2.2.1 if 、elseif 和 else
 标准的 if 结构如下代码所示，留意括号以及花括号的位置，注意 else 和 elseif 都与前面的结束花括号在同一行。
 
+```php
 if ($expr1) {
     // if body
 } elseif ($expr2) {
@@ -101,12 +102,14 @@ if ($expr1) {
 } else {
     // else body;
 }
+```
 
 应该使用关键词 elseif 代替所有 else if ,以使得所有的控制关键字都是单独的一个词。
 
-3.2.2.2 switch 和case
+#### 3.2.2.2 switch 和case
 标准的 switch 结构如下代码所示，留意括号、空格以及花括号的位置。 case 语句必须对 switch 进行一次缩进，而 break 语句以及 case 内的其它语句必须相对 case 进行一次缩进。如果存在非空的 case 直穿语句，主体里必须有类似 // no break 的注释。 
 
+```php
 <?php
 switch ($expr) {
     case 0:
@@ -124,41 +127,50 @@ switch ($expr) {
         echo 'Default case';
         break;
 }
+```
 
-3.2.2.3 while 和 do while
+#### 3.2.2.3 while 和 do while
 一个规范的 while 语句应该如下所示，注意其括号、空格以及花括号的位置。
 
+```php
 <?php
 while ($expr) {
     // structure body
 }
+```
 
 标准的 do while 语句如下所示，同样的，注意其括号、空格以及花括号的位置。
-
+```php
 <?php
 do {
     // structure body
 } while ($expr);
+```
 
-3.2.2.4 for
+#### 3.2.2.4 for
 标准的 for 语句如下所示，注意其括号、空格以及花括号的位置。
 
+```php
 <?php
 for ($i = 0; $i < 10; $i++) {
     // for body
 }
+```
 
-3.2.2.5 foreach
+#### 3.2.2.5 foreach
 标准的 foreach 语句如下所示，注意其括号、空格以及花括号的位置。
 
+```php
 <?php
 foreach ($iterable as $key => $value) {
     // foreach body
 }
+```
 
-3.2.2.6 try catch
+#### 3.2.2.6 try catch
 标准的 try catch 语句如下所示，注意其括号、空格以及花括号的位置。
 
+```php
 <?php
 try {
     // try body
@@ -167,21 +179,25 @@ try {
 } catch (OtherExceptionType $e) {
    // catch body
 }
+```
 
-4 代码注释
+## 4 代码注释
 多行文档注释:  /**   */
 普通多行注释:  /*  */
 单行注释符号:  //
 
-4.1 文档的注释
+### 4.1 文档的注释
 PHP文档（demo.php）
+```php
 /**
  * [doadd description]名字及描述
  * @return [type]类型 [description] 描述
  */
+```
 
-4.2 类文件注释
+### 4.2 类文件注释
 PHP的类文件(Demo.class.php)
+```php
 /**
  * 类的简述
  *
@@ -191,18 +207,20 @@ PHP的类文件(Demo.class.php)
  * @author    Rich SevenRich@163.com  作者
  * @version   $Id$  版本
  */
+```
 
-4.3 方法和函数的注释
+### 4.3 方法和函数的注释
 每个函数，包括对象方法，必须有最少包括下列内容的文档块：
 函数的描述;
 所有参数;
 所有可能的返回值。
 
+```php
 /**
  * [doadd description] 描述
  * @param [type] $param [description] 参数类型及描述
  * …
  * @return [type] [description] 返回类型及描述
  */
-
+```
 
